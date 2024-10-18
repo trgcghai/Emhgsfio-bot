@@ -1,13 +1,13 @@
 # Don't change this `name` below, the script might broke at some point
 name: "init banner"
 on:
-   workflow_dispatch:
-   schedule:
-     # You can change this CRON syntax to customize execute interval
-     - cron: "0 */2 * * *"
+  workflow_dispatch:
+  schedule:
+    # You can change this CRON syntax to customize execute interval
+    - cron: "0 * * * *"
 
 jobs:
- checks:
+  checks:
     runs-on: ubuntu-latest
     steps:
       - name: "ownership check"
@@ -33,7 +33,7 @@ jobs:
           fi
           : "Ignore"
 
- inits:
+  inits:
     runs-on: ubuntu-latest
     if: success() && true
     steps:
